@@ -26,6 +26,7 @@ public class Player : MonoBehaviour {
 		}
 	}
 
+	Vector2 mouseIn;
 
 
 
@@ -35,8 +36,13 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Vector2 direction = new Vector2 (Manager.Instance.InputControl.Vertical * speed, Manager.Instance.InputControl.Horizontal * speed);
+		
+		Vector2 direction = new Vector2 (Manager.Instance.InputControl.Vertical * speed, Manager.Instance.InputControl.Horizontal);
 		MoveControl.Move(direction);
+
+		mouseIn.x = Mathf.Lerp (mouseIn.x, Manager.Instance.InputControl.Horizontal * speed, 1f / mouseControl.Damping.x);
+
+		transform.Rotate (Vector3.up * mouseIn.x * mouseControl.Sensitivty.x);
 	}
 
 }
