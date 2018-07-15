@@ -33,6 +33,7 @@ public class Shoot : MonoBehaviour {
 
 		if (Physics.Raycast (muzzle.position, muzzle.transform.forward, out hit, range)) {
 			Debug.Log (hit.transform.name + " found!");
+			Destroy (hit.collider.gameObject);
 		}
 
 		canShoot = true;

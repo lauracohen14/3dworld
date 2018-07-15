@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23496696100374204}
   - component: {fileID: 136899361300887660}
   - component: {fileID: 54805732802656174}
+  - component: {fileID: 114435241681971404}
   m_Layer: 0
   m_Name: Tree
   m_TagString: Untagged
@@ -100,6 +101,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114435241681971404
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1574355561166254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22be6cc5aefbe48f6bf3a155d3222e57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mat1: {fileID: 2100000, guid: 9296e7f3bf1384e9d9c9401d9bb430e2, type: 2}
+  mat2: {fileID: 2100000, guid: e907e370a06d3ff49b3215387775ed67, type: 2}
+  mat3: {fileID: 2100000, guid: 382888620600d46ed8bc56d97b10d68a, type: 2}
+  mat4: {fileID: 2100000, guid: 227af8007854ca246a48c2f3edf86a4d, type: 2}
+  mat5: {fileID: 2100000, guid: 96187335e0cb98c44aac67a04bb39e15, type: 2}
+  mat6: {fileID: 2100000, guid: f8ffae789d3897c41af6cc9cda7cca0f, type: 2}
+  mat7: {fileID: 2100000, guid: 35d9c680ffb36694d84cb0ec28a51716, type: 2}
+  mat8: {fileID: 2100000, guid: db7f9a3a38264f94d9e18f00b7e379ac, type: 2}
+  mat9: {fileID: 2100000, guid: 7e8139552baf796498fde26cbcec5419, type: 2}
+  mat10: {fileID: 2100000, guid: 9422c835add2b4cd79366a844c903705, type: 2}
 --- !u!136 &136899361300887660
 CapsuleCollider:
   m_ObjectHideFlags: 1
