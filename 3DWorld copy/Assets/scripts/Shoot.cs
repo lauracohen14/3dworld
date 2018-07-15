@@ -5,22 +5,28 @@ using UnityEngine;
 public class Shoot : MonoBehaviour {
 
 	[SerializeField]float fireRate;
+	[SerializeField]Bullet bullet;
 
 	[HideInInspector]
-	public Transform end;
+	public Transform muzzle;
 
 	bool canShoot;
 	float nextShoot;
 
 	void Awake(){
-		end = transform.Find ("End");
+		muzzle = transform.Find("Muzzle");
 	}
 
 	public virtual void ShootIt(){
-		canShoot = false;
+		print ("shooting");
+		//canShoot = false;
 
-		if (Time.time < nextShoot)
-			return;
+		//if (Time.time < nextShoot)
+		//	return;
+		
+		//nextShoot = Time.time + fireRate;
+
+		Instantiate (bullet, muzzle.position, muzzle.rotation);
 
 		canShoot = true;
 	
@@ -30,7 +36,7 @@ public class Shoot : MonoBehaviour {
 		
 	}
 	
-	// Update is called once per frame
+	// Update is called once per frames
 	void Update () {
 		
 	}
