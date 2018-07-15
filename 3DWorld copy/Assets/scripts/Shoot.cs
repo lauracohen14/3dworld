@@ -5,13 +5,14 @@ using UnityEngine;
 public class Shoot : MonoBehaviour {
 
 	[SerializeField]float fireRate;
-	[SerializeField]Bullet bullet;
+	//[SerializeField]Bullet bullet;
 
 	[HideInInspector]
 	public Transform muzzle;
 
 	bool canShoot;
 	float nextShoot;
+	public int range = 100;
 
 	void Awake(){
 		muzzle = transform.Find("Muzzle");
@@ -26,7 +27,13 @@ public class Shoot : MonoBehaviour {
 		
 		//nextShoot = Time.time + fireRate;
 
-		Instantiate (bullet, muzzle.position, muzzle.rotation);
+		//Instantiate (bullet, muzzle.position, muzzle.rotation);
+
+		RaycastHit hit;
+
+		if (Physics.Raycast (muzzle.position, muzzle.transform.forward, out hit, range)) {
+			Debug.Log (hit.transform.name + " found!");
+		}
 
 		canShoot = true;
 	
