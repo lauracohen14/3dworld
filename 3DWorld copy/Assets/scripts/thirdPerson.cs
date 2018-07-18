@@ -37,29 +37,29 @@ public class thirdPerson : MonoBehaviour {
 			localPlayer.transform.right * cameraOffset.x;
 
 		if (Input.GetKey(KeyCode.O)) {
-			float holder = cam.transform.position.y;
+			float holder = Ahead.transform.position.y;
 			holder += 0.5f;
 
-			cam.transform.position = new Vector3 (cam.transform.position.x, holder, cam.transform.position.z);
+			Ahead.transform.position = new Vector3 (Ahead.transform.position.x, holder, Ahead.transform.position.z);
 			//Ahead.transform.position.y += 1;
 		}
 		if (Input.GetKey(KeyCode.I)) {
-			float holder = cam.transform.position.y;
+			float holder = Ahead.transform.position.y;
 			holder -= 0.5f;
 
-			cam.transform.position = new Vector3 (cam.transform.position.x, holder, cam.transform.position.z);
+			Ahead.transform.position = new Vector3 (Ahead.transform.position.x, holder, Ahead.transform.position.z);
 			//Ahead.transform.position.y += 1;
 		}
 
 		if (Input.GetKey(KeyCode.L)) {
-			float holder = cam.transform.position.z;
+			float holder = Ahead.transform.position.z;
 			holder += 0.5f;
-			cam.transform.position = new Vector3 (cam.transform.position.x, cam.transform.position.y, holder);
+			Ahead.transform.position = new Vector3 (Ahead.transform.position.x, Ahead.transform.position.y, holder);
 		}
 		if (Input.GetKey(KeyCode.K)) {
-			float holder = cam.transform.position.z;
+			float holder = Ahead.transform.position.z;
 			holder -= 0.5f;
-			cam.transform.position = new Vector3 (cam.transform.position.x, cam.transform.position.y, holder);
+			Ahead.transform.position = new Vector3 (Ahead.transform.position.x, Ahead.transform.position.y, holder);
 		}
 
 		Quaternion tRot = Quaternion.LookRotation (Ahead.position - targPos, Vector3.up);
