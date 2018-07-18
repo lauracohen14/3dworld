@@ -50,17 +50,20 @@ public class thirdPerson : MonoBehaviour {
 			Ahead.transform.position = new Vector3 (Ahead.transform.position.x, holder, Ahead.transform.position.z);
 			//Ahead.transform.position.y += 1;
 		}
+		float xHold = Ahead.transform.position.x;
+		float yHold = Ahead.transform.position.y;
 
 		if (Input.GetKey(KeyCode.L)) {
 			float holder = Ahead.transform.position.z;
+		
 			holder += 0.5f;
-			Ahead.transform.position = new Vector3 (Ahead.transform.position.x, Ahead.transform.position.y, holder);
+			Ahead.transform.position = new Vector3 (xHold, yHold, holder);
 			//isnt taking into account the change in rotation of y
 		}
 		if (Input.GetKey(KeyCode.K)) {
 			float holder = Ahead.transform.position.z;
 			holder -= 0.5f;
-			Ahead.transform.position = new Vector3 (Ahead.transform.position.x, Ahead.transform.position.y, holder);
+			Ahead.transform.position = new Vector3 (xHold, yHold, holder);
 		}
 
 		Quaternion tRot = Quaternion.LookRotation (Ahead.position - targPos, Vector3.up);
