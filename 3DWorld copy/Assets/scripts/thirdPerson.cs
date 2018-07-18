@@ -55,6 +55,7 @@ public class thirdPerson : MonoBehaviour {
 			float holder = Ahead.transform.position.z;
 			holder += 0.5f;
 			Ahead.transform.position = new Vector3 (Ahead.transform.position.x, Ahead.transform.position.y, holder);
+			//isnt taking into account the change in rotation of y
 		}
 		if (Input.GetKey(KeyCode.K)) {
 			float holder = Ahead.transform.position.z;

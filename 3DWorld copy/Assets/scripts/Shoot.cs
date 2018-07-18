@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Shoot : MonoBehaviour {
 
 	[SerializeField]float fireRate;
@@ -9,6 +10,12 @@ public class Shoot : MonoBehaviour {
 
 	[HideInInspector]
 	public Transform muzzle;
+	[SerializeField]AudioClip destroy;
+	[SerializeField]AudioSource sourceOther;
+	[SerializeField]AudioClip shoot;
+	[SerializeField]AudioSource source;
+	[SerializeField]AudioClip background;
+	[SerializeField]AudioSource sourceSecondOther;
 
 	bool canShoot;
 	float nextShoot;
@@ -20,6 +27,7 @@ public class Shoot : MonoBehaviour {
 
 	public virtual void ShootIt(){
 		print ("shooting");
+		source.PlayOneShot (shoot);
 		//canShoot = false;
 
 		//if (Time.time < nextShoot)
@@ -34,6 +42,7 @@ public class Shoot : MonoBehaviour {
 		if (Physics.Raycast (muzzle.position, muzzle.transform.forward, out hit, range)) {
 			Debug.Log (hit.transform.name + " found!");
 			Destroy (hit.collider.gameObject);
+			sourceOther.PlayOneShot (destroy);
 		}
 
 		canShoot = true;

@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23155223580022240}
   - component: {fileID: 54729082664986070}
   - component: {fileID: 114310964424202220}
+  - component: {fileID: 65035160271873780}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -100,6 +101,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &65035160271873780
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1002323447179362}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 2, z: 1.0000002}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!114 &114310964424202220
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,7 +142,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1002323447179362}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
