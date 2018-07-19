@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class thirdPerson : MonoBehaviour {
+public class FPS1 : MonoBehaviour {
 
 	[SerializeField]Vector3 cameraOffset;
 	[SerializeField]float damping;
@@ -19,13 +19,13 @@ public class thirdPerson : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		Manager.Instance.playerJoined += HandleOnPlayerJoined;;
-		cam = GameObject.Find ("ThirdPerson");
+		cam = GameObject.Find ("FPS1");
 	}
 
 	void HandleOnPlayerJoined(Player player){
 		localPlayer = player;
-		Ahead = localPlayer.transform.Find ("Ahead");
-		cam = GameObject.Find("ThirdPerson");
+		Ahead = localPlayer.transform.Find ("AheadFPS");
+		cam = GameObject.Find("FPS1");
 		//cam = localPlayer.transform.Find ("Main Camera");
 
 
@@ -61,7 +61,7 @@ public class thirdPerson : MonoBehaviour {
 
 		if (Input.GetKey(KeyCode.L)) {
 			float holder = Ahead.transform.position.z;
-		
+
 			holder += 0.5f;
 			Ahead.transform.position = new Vector3 (xHold, yHold, holder);
 			//isnt taking into account the change in rotation of y

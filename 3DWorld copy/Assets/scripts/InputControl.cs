@@ -8,6 +8,7 @@ public class InputControl : MonoBehaviour {
 	public float Horizontal;
 	public Vector2 Mouse;
 	public bool ShootFirst;
+	public bool ShootFPS;
 
 
 	void Update(){
@@ -15,6 +16,7 @@ public class InputControl : MonoBehaviour {
 		Horizontal = Input.GetAxis("Horizontal");
 		Mouse = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
 		ShootFirst = Input.GetMouseButtonDown (0);
+		ShootFPS = Input.GetKeyDown(KeyCode.Q);
 	}
 
 }
