@@ -21,6 +21,7 @@ public class Shoot : MonoBehaviour {
 	float nextShoot;
 	public int range = 100;
 
+	//allows the raycast to go out from the tip of the gun
 	void Awake(){
 		muzzle = transform.Find("Muzzle");
 	}
@@ -28,15 +29,8 @@ public class Shoot : MonoBehaviour {
 	public virtual void ShootIt(){
 		print ("shooting");
 		source.PlayOneShot (shoot);
-		//canShoot = false;
 
-		//if (Time.time < nextShoot)
-		//	return;
-		
-		//nextShoot = Time.time + fireRate;
-
-		//Instantiate (bullet, muzzle.position, muzzle.rotation);
-
+		//set up for raycasting
 		RaycastHit hit;
 
 		if (Physics.Raycast (muzzle.position, muzzle.transform.forward, out hit, range)) {
@@ -48,13 +42,5 @@ public class Shoot : MonoBehaviour {
 		canShoot = true;
 	
 	}
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frames
-	void Update () {
-		
-	}
+
 }

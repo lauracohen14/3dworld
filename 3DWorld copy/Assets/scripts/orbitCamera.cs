@@ -23,7 +23,7 @@ public class orbitCamera : MonoBehaviour {
 				transform.RotateAround (target.transform.position, Vector3.up, Time.deltaTime * 10);
 			}
 
-
+			//allows to change the position of the camera
 			if (Input.GetKey(KeyCode.O)) {
 				float holder = transform.position.y;
 				holder += 0.5f;

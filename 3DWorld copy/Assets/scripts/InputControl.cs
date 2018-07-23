@@ -10,7 +10,7 @@ public class InputControl : MonoBehaviour {
 	public bool ShootFirst;
 	public bool ShootFPS;
 
-
+	//controls the user input
 	void Update(){
 		Vertical = Input.GetAxis("Vertical");
 		Horizontal = Input.GetAxis("Horizontal");

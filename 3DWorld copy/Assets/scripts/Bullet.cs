@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour {
 	[SerializeField]float timeToLive;
 	[SerializeField]float damage;
 
-
+	//make a bullet shoot, did this before raycasting
 
 	void Start(){
 		Destroy(gameObject, timeToLive);

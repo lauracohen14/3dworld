@@ -40,7 +40,7 @@ public class FPS1 : MonoBehaviour {
 			+ localPlayer.transform.up * cameraOffset.y +
 			localPlayer.transform.right * cameraOffset.x;
 
-
+		//allows to change position of fps camera
 
 		if (Input.GetKey(KeyCode.O)) {
 			float holder = Ahead.transform.position.y;

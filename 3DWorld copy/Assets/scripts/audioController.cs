@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class audioController : MonoBehaviour {
 
+	//plays audio, finds a source and uses a clip when needed
+
 	[SerializeField] AudioClip clip;
 	[SerializeField] float timeBetween;
 
@@ -31,8 +33,5 @@ public class audioController : MonoBehaviour {
 			return;
 		}
 
-
-		//source.PlayOneShot (clip);
-		//lastTime = Time.deltaTime;
 	}
 }

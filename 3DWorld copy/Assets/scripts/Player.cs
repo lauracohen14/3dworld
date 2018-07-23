@@ -28,6 +28,8 @@ public class Player : MonoBehaviour {
 
 	bool isGrounded = false;
 
+
+	//finds a move controller
 	private MoveControl moveC;
 	public MoveControl MoveControl {
 		get{ 
@@ -41,6 +43,8 @@ public class Player : MonoBehaviour {
 
 	Vector2 mouseIn;
 
+
+	//my attempt of trying to make the player jump
 	void onCollisionEnter(Collision other){
 		if (other.gameObject.name == "floor") {
 			isGrounded = true;
@@ -72,12 +76,14 @@ public class Player : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+
+		//moves the player in certain direction
 		time = Time.deltaTime;
 		
 		Vector2 direction = new Vector2 (Manager.Instance.InputControl.Vertical * speed, Manager.Instance.InputControl.Horizontal);
-		//print (direction);
 
 
+		//my attempt at making the footsteps sound work 
 		if(Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0){
 			if (time - lastTime < timeBetween) {
 				source.PlayOneShot(steps);
@@ -87,40 +93,6 @@ public class Player : MonoBehaviour {
 
 
 		MoveControl.Move(direction);
-
-		/*if (Input.GetKey (KeyCode.D)) {
-			float holder = transform.position.x;
-			holder += speed;
-
-			transform.position = new Vector3 (holder, transform.position.y, transform.position.z);
-
-		}
-		if (Input.GetKey (KeyCode.A)) {
-			float holder = transform.position.x;s
-			holder -= speed;
-
-			transform.position = new Vector3 (holder, transform.position.y, transform.position.z);
-
-		}
-
-		if (Input.GetKey (KeyCode.W)) {
-			float holder = transform.position.z;
-			holder += speed;
-
-			transform.position = new Vector3 (transform.position.x, transform.position.y, holder);
-
-		}
-		if (Input.GetKey (KeyCode.S)) {
-			float holder = transform.position.z;
-			holder -= speed;
-
-			transform.position = new Vector3 (transform.position.x, transform.position.y,holder);
-
-		}*/
-			
-			
-
-
 
 		mouseIn.x = Mathf.Lerp (mouseIn.x, Manager.Instance.InputControl.Horizontal * speed, 1f / mouseControl.Damping.x);
 

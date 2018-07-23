@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour {
-
+	//controls to shoot the gun when needed
 	[SerializeField]Shoot Gun;
 
 	void Update(){

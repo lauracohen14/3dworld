@@ -13,7 +13,7 @@ public class changer : MonoBehaviour {
 	AudioListener thirdAudio;
 	AudioListener orbitAudio;
 	AudioListener fpsAudio;
-
+	//changed between cameras
 	int cameraNumber;
 
 	// Use this for initialization
@@ -30,7 +30,7 @@ public class changer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		//allows to change between cameras depending on the button you press
 		if (Input.GetKeyDown (KeyCode.T)) {
 			cameraNumber = 1;
 

@@ -9,12 +9,13 @@ public class thirdPerson : MonoBehaviour {
 
 	public bool thisIsOnFirst;
 	public orbitCamera orbit;
-	//public fpsCamera fps;
+
 
 
 	Transform Ahead;
 	GameObject cam;
 
+	//when a player joins, it focuses on them, in case of many players
 	public Player localPlayer;
 	// Use this for initialization
 	void Awake () {
@@ -41,7 +42,7 @@ public class thirdPerson : MonoBehaviour {
 			localPlayer.transform.right * cameraOffset.x;
 
 
-
+		//allows to change the position of the camera
 		if (Input.GetKey(KeyCode.O)) {
 			float holder = Ahead.transform.position.y;
 			holder += 0.5f;

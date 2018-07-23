@@ -11,7 +11,7 @@ public class FPSControl : MonoBehaviour {
 	public float smoothing = 2.0f;
 
 	GameObject character;
-
+	//code I did in attempt to do different control for FPS, changes the view depending on the mouse
 	void Start(){
 		character = this.transform.parent.gameObject;
 	
